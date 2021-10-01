@@ -1,0 +1,16 @@
+<h1>Saldo</h1>
+
+<p>
+  USD: {{ BitCoin.getDataBRL() / BitCoin.getDataUSD() / BitCoin.getSaldo() }}
+</p>
+<p>
+  EUR: {{ BitCoin.getDataBRL() / BitCoin.getDataEUR() / BitCoin.getSaldo() }}
+</p>
+<p>BRL: {{ BitCoin.getDataBRL() / BitCoin.getSaldo() }}</p>
+
+<input type="number" [(ngModel)]="n" />
+
+<p>BitCoin: {{ BitCoin.getSaldo() }}</p>
+
+<button (click)="this.BitCoin.adicionar(n)">Adicionar</button
+><button (click)="this.BitCoin.remover(n)">Remover</button>

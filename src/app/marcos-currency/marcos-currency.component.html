@@ -1,0 +1,21 @@
+<table border="2">
+  <th>Time</th>
+  <th>USD</th>
+  <th>EUR</th>
+  <th>BRL</th>
+  <tr *ngFor="let rate of BitCoin.bitCoinList; index as x">
+    <td>{{ rate.time.updated }}</td>
+    <td>
+      {{ (rate.bpi.BRL.rate_float / rate.bpi.USD.rate_float).toFixed(4) }}
+    </td>
+    <td>
+      {{
+        (
+          rate.bpi.BRL.rate_float /
+          this.BitCoin.bitCoinListEUR[x].bpi.EUR.rate_float
+        ).toFixed(4)
+      }}
+    </td>
+    <td>{{ rate.bpi.BRL.rate_float.toFixed(4) }}</td>
+  </tr>
+</table>
